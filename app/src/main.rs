@@ -1,22 +1,11 @@
-use std::fs::File;
-use std::io::Read;
 use crate::data::game_list_data::GameList;
+use crate::data::game_list_data::read_json_file;
 
 mod data;
 
-fn read_json_file(file_path: &str) -> Result<String, std::io::Error> {
-    let mut file = File::open(file_path)?;
-    let mut contents = String::new();
-    file.read_to_string(&mut contents)?;
-    Ok(contents)
-}
-
 fn main() -> Result<(), std::io::Error>{
-    // read paths.json file
+    // read and parse json file
     let json_file = read_json_file("./paths.json").unwrap();
-    // println!("{}", json_file);
-
-    // parse json file
     let game_list: GameList = serde_json::from_str(&json_file).expect("JSON was not well-formatted");
 
     // print game list
@@ -25,7 +14,7 @@ fn main() -> Result<(), std::io::Error>{
     // Select a game
     println!("Select a game:");
     for (i, game) in game_list.games.iter().enumerate() {
-        println!("{}. {}", i, game.name);
+        println!("{}. {}, Path: {}", i, game.name, game.path);
     }
 
     // Read user input
