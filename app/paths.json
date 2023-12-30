@@ -2,7 +2,8 @@
     "games":[
         {
             "name":"Stardew",
-            "path":"./"
+            "path":"/Users/nicholashellmers/Library/Application Support/Steam/steamapps/common/Stardew Valley/Contents/MacOS/Mods",
+            "active_mod_pack": ""
         }
     ]
 }
