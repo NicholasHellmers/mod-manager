@@ -4,6 +4,10 @@ use crate::data::game_list_data::read_json_file;
 mod data;
 
 fn main() -> Result<(), std::io::Error>{
+    // Get args passed to the program
+    let args: Vec<String> = std::env::args().collect();
+    println!("{:?}", args);
+
     // read and parse json file
     let json_file = read_json_file("./paths.json").unwrap();
     let game_list: GameList = serde_json::from_str(&json_file).expect("JSON was not well-formatted");
