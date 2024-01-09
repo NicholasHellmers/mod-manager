@@ -1,15 +1,11 @@
 [package]
 name = "modman"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 authors = ["Nicholas Hellmers Davalos <nihe1661@colorado.edu>"]
 license = "MIT"
 description = "A tool for modpacks"
 readme = "README.md"
-homepage = "https://github.com/NicholasHellmers/mod-manager"
-repository = "https://github.com/NicholasHellmers/mod-manager"
-keywords = ["cli", "mod", "games"]
-categories = ["command-line-utilities"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
